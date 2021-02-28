@@ -11,13 +11,12 @@ public class MainClient {
 
     public static void main(String[] args) throws IOException {
         Socket socket=new Socket("localhost",4545);
-        PrintWriter out=new PrintWriter(socket.getOutputStream());
+        PrintWriter out=new PrintWriter(socket.getOutputStream(),true);
         BufferedReader in=new BufferedReader(new InputStreamReader(socket.getInputStream()));
         Scanner scanner=new Scanner(System.in);
         System.out.println("Va rog introduceti numele");
-        String next = scanner.next();
-        out.println(next);
 
+        out.println(scanner.next());
 
         String s = in.readLine();
 

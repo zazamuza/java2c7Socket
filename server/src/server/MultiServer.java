@@ -35,16 +35,13 @@ public class MultiServer {
 
         public void run(){
             try {
-                printWriter=new PrintWriter(socket.getOutputStream());
+                printWriter=new PrintWriter(socket.getOutputStream(),true);
                 br=new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                String line="";
-                while ((line=br.readLine())!=null)
-                {
-                    if(".".equals(line)){
-                        printWriter.println("bye");
-                    break;}
+                String line=br.readLine();
+
+
                     printWriter.println("Hello" + line);
-                }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
