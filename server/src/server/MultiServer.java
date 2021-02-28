@@ -40,7 +40,7 @@ public class MultiServer {
                 String line=br.readLine();
 
 
-                    printWriter.println("Hello" + line);
+                    printWriter.println("Hello" +  " " + line);
 
             } catch (IOException e) {
                 e.printStackTrace();
